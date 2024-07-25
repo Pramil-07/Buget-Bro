@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.login-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 40rem;
+    text-align: center;
+}
+
+.login-container .logo {
+    margin-bottom: 20px;
+}
+.login-container .logo img {
+    width: 100px;
+    height: auto;
+}
+.login-container h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 500;
+}
+h1>span{
+    color: #2f9e00;
+    font-size: 35;
+    font-weight: 900;
+}
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+}
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 50%;
+    padding: 10px 40px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.login-container .input-logo{
+    position: relative;
+    right: 62%;
+    color:#666;
+}
+.login-container .remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 9rem;
+}
+.login-container .remember-me input {
+    margin-right: 1rem;
+}
+.login-container button {
+    width: 24%;
+    margin: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2f9e00;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+form a {
+    color: #2f9e00;
+}
+.login-container .extra-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.login-container .extra-links a {
+    color:#2f9e00;
+    margin-left: 24px;
+    text-decoration: none;
+}
+.login-container .extra-links a:hover {
+    text-decoration: underline;
+}
+.social{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.social>i{    
+    font-size: 24px;
+    margin: 12px;
+    padding: 0px;
+
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3px;
+    background-color: #fafafa;
+}

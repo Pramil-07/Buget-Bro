@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <time class="left">
+          <i class="ri-calendar-2-line"></i>
+          <label for="expense-date"> 23 Nov 2024</label>
+        </time>
+
+        <div class="right">
+          <i class="ri-search-line"></i>
+          <i class="ri-folder-warning-line"></i>
+        </div>
+        <!-- cards -->
+        <div class="container-card">
+          <a class="red">
+            <div class="card-1 card" bis_skin_checked="1">
+              <i class="ri-money-rupee-circle-line"></i>card 1
+            </div>
+          </a>
+          <a class="orange">
+            <div class="card-2 card" bis_skin_checked="1">
+              <i class="ri-wallet-3-line"></i> card 2
+            </div>
+          </a>
+          <a class="yellow">
+            <div class="card-3 card" bis_skin_checked="1">
+              <i class="ri-file-list-3-line"></i>card 3
+            </div>
+          </a>
+        </div>
+        <!-- card-end -->
+      </nav>
+      <aside>
+        <div class="side-container">
+          <img src="IMG_1270.JPG" alt="this is profile image" />
+          <h1>Warren Buffet</h1>
+          <span><i class="ri-home-8-line"></i> &nbsp;Home</span>
+          <span><i class="ri-money-rupee-circle-line"></i> &nbsp;Expense</span>
+          <span><i class="ri-bank-line"></i> &nbsp;Saving</span>
+          <span><i class="ri-logout-circle-line"></i> &nbsp;LogOut</span>
+        </div>
+      </aside>
+
+      <main>
+        <input type="text" placeholder="Add Expenses" />
+
+        <section class="table_component" role="region" tabindex="0">
+          <table>
+            <caption>
+              Today
+            </caption>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Items</th>
+                <th>price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Food</td>
+                <td>Pzza</td>
+                <td>500</td>
+              </tr>
+              <tr>
+                <td>Suscription</td>
+                <td>Netflix</td>
+                <td>1000</td>
+              </tr>
+              <tr>
+                <td>Food</td>
+                <td>Pzza</td>
+                <td>500</td>
+              </tr>
+              <tr>
+                <td>Suscription</td>
+                <td>Netflix</td>
+                <td>1000</td>
+              </tr>
+              <tr>
+                <td>Food</td>
+                <td>Pzza</td>
+                <td>500</td>
+              </tr>
+              <tr>
+                <td>Suscription</td>
+                <td>Netflix</td>
+                <td>1000</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+      <section class="expense-data">
+        <h4><i class="ri-calendar-close-line"></i>Last Month</h4>
+        <figure>
+          <svg
+            class="svg1"
+            viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="#A7F0BA"
+              d="M43,-74.2C56.2,-66.9,67.7,-56.3,75.7,-43.4C83.7,-30.5,88.3,-15.2,88.2,0C88.2,15.2,83.5,30.3,75.8,43.8C68.1,57.2,57.3,68.9,44.2,76.9C31,84.8,15.5,88.9,0,88.9C-15.5,88.9,-31,84.8,-45.1,77.4C-59.2,70,-71.7,59.3,-79.9,45.9C-88,32.5,-91.6,16.2,-91.8,-0.1C-91.9,-16.4,-88.5,-32.7,-80.2,-46C-72,-59.2,-58.9,-69.3,-44.7,-76.1C-30.5,-82.8,-15.3,-86.4,-0.2,-86.1C14.9,-85.7,29.8,-81.6,43,-74.2Z"
+              transform="translate(100 100)"
+            />
+          </svg>
+          <br />
+
+          <svg
+            class="svg2"
+            viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="#D6EFD8"
+              d="M57.3,-67C72.9,-55.2,83.3,-35.8,82.6,-17.8C81.8,0.2,70,16.9,59.7,34.1C49.3,51.2,40.4,68.8,26.1,75.8C11.8,82.9,-7.9,79.4,-24.4,71.5C-41,63.6,-54.3,51.3,-61.8,36.6C-69.2,21.8,-70.8,4.5,-68.1,-12.2C-65.4,-29,-58.4,-45.2,-46.4,-57.6C-34.3,-70,-17.2,-78.7,1.8,-80.9C20.8,-83,41.7,-78.8,57.3,-67Z"
+              transform="translate(100 100)"
+            />
+          </svg>
+          <svg
+            class="svg3"
+            viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="#A7F0BA"
+              d="M52.5,-73C66.6,-62,75.6,-44.7,81.8,-26.4C88.1,-8,91.6,11.4,86.7,28.6C81.7,45.8,68.4,60.8,52.5,71.5C36.7,82.1,18.3,88.5,0.3,88.1C-17.8,87.7,-35.6,80.6,-51.4,70C-67.3,59.3,-81.2,45.1,-87.7,27.8C-94.3,10.5,-93.6,-9.8,-87.2,-28C-80.8,-46.2,-68.8,-62.2,-53.4,-72.7C-37.9,-83.2,-18.9,-88.1,0.1,-88.3C19.2,-88.5,38.4,-83.9,52.5,-73Z"
+              transform="translate(100 100)"
+            />
+          </svg>
+        </figure>
+        <h4>View All Expenses</h4>
+      </section>
+    </div>
+  </body>
+</html>
