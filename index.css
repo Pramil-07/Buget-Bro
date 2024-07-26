@@ -10,6 +10,7 @@ body {
   width: 100%;
   overflow: hidden;
 }
+
 .container {
   display: grid;
   height: 100%;
@@ -31,12 +32,14 @@ nav {
   display: flex;
   justify-content: space-between;
   font-size: 24px;
-  background-color: #f6f6f6;
+  /* background-color:  #F3F8FF;  */
   /* -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
   -moz-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
   box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66); */
   /* gap: 45rem; */
+  color: #756ab6;
 }
+
 nav > .right {
   display: flex;
   align-items: center;
@@ -72,21 +75,36 @@ nav .left {
   width: 18rem;
   height: 10rem;
   padding: 12px;
-  background-color: #22512a;
+
+  background-color: #756ab6;
   z-index: 2;
-  -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
-  -moz-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
-  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
+  -webkit-box-shadow: 0px 0px 12px 2px rgba(117, 106, 182);
+  -moz-box-shadow: 0px 0px 12px 2px rgba(117, 106, 182);
+  box-shadow: 0px 0px 12px 2px rgba(117, 106, 182);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  justify-content: space-between;
+}
+.card h2,
+p {
+  margin: 5px 24px;
+}
+.card .card-log {
+  padding: 8px;
+  border-radius: 30px;
+  margin: 5px 12px;
+  /* background-color: #060000; */
+  font-size: 40px;
 }
 
-/* nav-ends */
 aside {
   grid-area: aside;
 
   padding-top: 2rem;
-  /* width: 17rem;
-    height: 100vh; */
-  background-color: #000000;
+  background-color: #756ab6;
   -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
   -moz-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
   box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
@@ -100,7 +118,7 @@ aside {
   padding-bottom: 6rem;
   align-items: center;
   justify-content: space-evenly;
-  background-color: #000000;
+  background-color: #756ab6;
 }
 .side-container > img {
   height: 140px;
@@ -113,22 +131,24 @@ aside {
   padding: 12px;
 }
 .side-container > span:hover {
-  background-color: #22512a;
+  background-color: #f3f8ff;
   border-radius: 12px;
+  color: black;
 }
 
+/* main section and table starts */
 main {
   grid-area: main;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background-color: #f6f6f6;
+  justify-content: flex-start;
+  /* padding: 24px; */
+  /* background-color: #F3F8FF; */
   border-radius: 16px;
   /* -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
   -moz-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
-  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66); */
+  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);  */
 
   /* width: 70%; */
 }
@@ -137,24 +157,34 @@ main > input {
   width: 35rem;
   border-radius: 20px;
   border: none;
-  background-color: #d3dcd5;
-  padding: 5px 24px;
-  margin: 0px 40px;
+  background-color: #f3f8ff;
+  padding: 5px 8px;
+  margin: 0px 115px 0px 0px;
   font-size: 16px;
   font-weight: 700;
-  -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
-  -moz-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
-  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
+  -webkit-box-shadow: 0px 0px 12px 2px rgba(117, 106, 182);
+  -moz-box-shadow: 0px 0px 12px 2px rgba(117, 106, 182);
+  box-shadow: 0px 0px 12px 2px rgba(117, 106, 182);
 }
 main > section {
-  height: 100%;
+  height: 50vh;
   width: 80%;
-  margin: 24px 0px 0px 40px;
   background-color: transparent;
 }
+.input-icon {
+  display: flex;
+  color: #756ab6;
+  position: relative;
+  top: -32px;
+  left: 20%;
+  width: 24px;
+  gap: 18px;
+}
+
 .table_component {
   overflow: auto;
   width: 100%;
+
   font-size: 12px;
 }
 
@@ -162,70 +192,88 @@ main > section {
   border: 1px none #dededf;
   height: 100%;
   width: 80%;
-  padding: 12px;
   margin-left: 24px;
-  background-color: #d3dcd5;
+  background-color: #f3f8ff;
   table-layout: fixed;
   border-collapse: collapse;
   border-spacing: 0px;
   text-align: left;
   border-radius: 16px;
-  -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
-  -moz-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
-  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
+  -webkit-box-shadow: 0px 0px 12px 2px rgba(117, 106, 182);
+  -moz-box-shadow: 0px 0px 12px 2px rgba(117, 106, 182);
+  box-shadow: 0px 0px 12px 2px rgba(117, 106, 182);
 }
-
+.table-caption {
+  caption-side: top;
+  text-align: left;
+  margin: 0px 0px 8px 0px;
+  font-size: 18px;
+  font-weight: 800;
+  width: 45vw;
+  color: #756ab6;
+}
 .table_component caption {
   caption-side: top;
   text-align: left;
   margin: 8px;
-  font-size: 24px;
-  font-weight: 700;
-  color: #1a5319;
 }
 
 .table_component th {
   background-color: transparent;
-  color: #b31515;
-  padding: 5px;
+  color: #756ab6;
+  padding: 12px 0px 12px 40px;
+  position: static;
   font-weight: 700;
+  font-size: 18px;
 }
 
 .table_component td {
   background-color: transparent;
   color: #504e4e;
-  padding: 0px 8px;
+  padding: 12px 0px 12px 40px;
 }
+
+/*main section and table ends */
+
+/*data-feed section starts */
+
 .expense-data {
   grid-area: section;
   display: flex;
   flex-direction: column;
-  background-color: #22512a;
+  justify-content: center;
+  align-items: center;
+  background-color: #756ab6;
   border-radius: 10px;
   padding: 24px;
   font-size: 24px;
-  -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
-  -moz-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
-  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.66);
+  -webkit-box-shadow: 0px 0px 12px 2px rgba(117, 106, 182);
+  -moz-box-shadow: 0px 0px 12px 2px rgba(117, 106, 182);
+  box-shadow: 0px 0px 12px 2px rgba(117, 106, 182);
 }
+
 .expense-data > figure {
   position: relative;
   width: 100%;
   height: 100%;
-  border: 1px solid blue;
 }
 figure > svg {
   position: absolute;
   size: 0px;
+  z-index: 2;
 }
-
+.expense-data > h4,
+a {
+  color: white;
+  font-size: 16px;
+  margin: 12px 0px 12px 0px;
+}
 .svg1 {
   top: 60%;
   left: 15%;
   transform: translate(-10%, -100%);
-  height: 60%;
+  height: 65%;
   width: 80%;
-  border: 1px solid red;
 }
 .svg1 > path {
   height: 100%;
@@ -235,16 +283,45 @@ figure > svg {
   top: 75%;
   left: 20%;
   transform: translate(-50%, -50%);
-  height: 60%;
-  width: 50%;
+  height: 70%;
+  width: 100%;
 }
 .svg3 {
   top: 70%;
   left: 75%;
   transform: translate(-50%, -50%);
-  height: 60%;
-  width: 50%;
+  height: 70%;
+  width: 100%;
 }
+.data-feed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 1px;
+  margin: 14px 5px 0px 5px;
+  height: 7rem;
+  width: 90%;
+  z-index: 3;
+  font-size: 16px;
+}
+
+.data-feed h3 {
+  color: #756ab6;
+  text-decoration: underline;
+}
+
+.buttom {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-self: center;
+  gap: 82px;
+  margin-bottom: 40px;
+}
+
+/*data-feed section ends */
 
 /* Desktop container utility class: */
 /* .container {

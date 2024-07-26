@@ -8,6 +8,8 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
     <title>Document</title>
   </head>
 
@@ -16,7 +18,7 @@
       <nav>
         <time class="left">
           <i class="ri-calendar-2-line"></i>
-          <label for="expense-date"> 23 Nov 2024</label>
+          <label class="date" for="expense-date"> 23 Nov 2024</label>
         </time>
 
         <div class="right">
@@ -27,26 +29,33 @@
         <div class="container-card">
           <a class="red">
             <div class="card-1 card" bis_skin_checked="1">
-              <i class="ri-money-rupee-circle-line"></i>card 1
+              <i class="ri-money-rupee-circle-line card-log"></i>
+              <h2>Current Balance</h2>
+              <p class="current-blc">Rs 1000000.00</p>
             </div>
           </a>
           <a class="orange">
             <div class="card-2 card" bis_skin_checked="1">
-              <i class="ri-wallet-3-line"></i> card 2
+              <i class="ri-wallet-3-line card-log"></i><h2>Total Income</h2>
+              <p class="total-income">Rs 1000000.00</p>
             </div>
           </a>
           <a class="yellow">
             <div class="card-3 card" bis_skin_checked="1">
-              <i class="ri-file-list-3-line"></i>card 3
+              <i class="ri-file-list-3-line card-log"></i>
+              <h2>Total Spent</h2>
+              <p class="total-spent">Rs 1000000.00</p>
             </div>
           </a>
         </div>
         <!-- card-end -->
+
       </nav>
+      <!-- side menu starts -->
       <aside>
         <div class="side-container">
           <img src="IMG_1270.JPG" alt="this is profile image" />
-          <h1>Warren Buffet</h1>
+          <h1 class="profileName">Warren Buffet</h1>
           <span><i class="ri-home-8-line"></i> &nbsp;Home</span>
           <span><i class="ri-money-rupee-circle-line"></i> &nbsp;Expense</span>
           <span><i class="ri-bank-line"></i> &nbsp;Saving</span>
@@ -54,13 +63,23 @@
         </div>
       </aside>
 
+      <!-- side menu ends -->
+      <!-- main section and table section starts -->
       <main>
-        <input type="text" placeholder="Add Expenses" />
-
+        <input  type="text" placeholder="Add Expenses" />
+        <div class="input-icon">
+          <span class="material-symbols-outlined Category-type">
+            sell
+            </span>
+            <span class="material-symbols-outlined plus">
+              add_circle
+              </span>
+        </div>
+    
+        <h1 class="table-caption">Today</h1>
         <section class="table_component" role="region" tabindex="0">
           <table>
             <caption>
-              Today
             </caption>
             <thead>
               <tr>
@@ -100,51 +119,74 @@
                 <td>Netflix</td>
                 <td>1000</td>
               </tr>
+              <tr>
+                <td>Food</td>
+                <td>Pzza</td>
+                <td>500</td>
+              </tr>
+              <tr>
+                <td>Suscription</td>
+                <td>Netflix</td>
+                <td>1000</td>
+              </tr>
+              <tr>
+                <td>Food</td>
+                <td>Pzza</td>
+                <td>500</td>
+              </tr>
+              <tr>
+                <td>Suscription</td>
+                <td>Netflix</td>
+                <td>1000</td>
+              </tr>
+              <tr>
+                <td>Food</td>
+                <td>Pzza</td>
+                <td>500</td>
+              </tr>
+              <tr>
+                <td>Suscription</td>
+                <td>Netflix</td>
+                <td>1000</td>
+              </tr>
             </tbody>
           </table>
         </section>
       </main>
+
+            <!-- main section and table section ends -->
+
       <section class="expense-data">
-        <h4><i class="ri-calendar-close-line"></i>Last Month</h4>
+        <h4><i class="ri-calendar-close-line"></i>&nbsp;Last Month</h4>
         <figure>
-          <svg
-            class="svg1"
-            viewBox="0 0 200 200"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="#A7F0BA"
-              d="M43,-74.2C56.2,-66.9,67.7,-56.3,75.7,-43.4C83.7,-30.5,88.3,-15.2,88.2,0C88.2,15.2,83.5,30.3,75.8,43.8C68.1,57.2,57.3,68.9,44.2,76.9C31,84.8,15.5,88.9,0,88.9C-15.5,88.9,-31,84.8,-45.1,77.4C-59.2,70,-71.7,59.3,-79.9,45.9C-88,32.5,-91.6,16.2,-91.8,-0.1C-91.9,-16.4,-88.5,-32.7,-80.2,-46C-72,-59.2,-58.9,-69.3,-44.7,-76.1C-30.5,-82.8,-15.3,-86.4,-0.2,-86.1C14.9,-85.7,29.8,-81.6,43,-74.2Z"
-              transform="translate(100 100)"
-            />
+          <div class="data-feed">
+            <h3 class="data-feed-first-catog">Food</h3>
+            <p class="data-feed-first-price" >2000 rs</p>
+          </div>
+          <svg class="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#F3F8FF" d="M43.2,-74.2C57.1,-66.7,70.4,-57.5,77.7,-44.9C85.1,-32.2,86.5,-16.1,86.9,0.2C87.3,16.6,86.7,33.1,79.6,46.2C72.4,59.2,58.8,68.8,44.5,76.3C30.2,83.8,15.1,89.2,-0.4,89.9C-15.9,90.7,-31.9,86.7,-45.3,78.7C-58.7,70.7,-69.5,58.5,-76.4,44.7C-83.2,30.9,-86.1,15.5,-85.6,0.3C-85.1,-14.9,-81.2,-29.8,-74.3,-43.5C-67.4,-57.3,-57.5,-69.8,-44.6,-77.9C-31.7,-85.9,-15.9,-89.4,-0.6,-88.3C14.6,-87.2,29.2,-81.6,43.2,-74.2Z" transform="translate(100 100)" />
           </svg>
           <br />
-
-          <svg
-            class="svg2"
-            viewBox="0 0 200 200"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="#D6EFD8"
-              d="M57.3,-67C72.9,-55.2,83.3,-35.8,82.6,-17.8C81.8,0.2,70,16.9,59.7,34.1C49.3,51.2,40.4,68.8,26.1,75.8C11.8,82.9,-7.9,79.4,-24.4,71.5C-41,63.6,-54.3,51.3,-61.8,36.6C-69.2,21.8,-70.8,4.5,-68.1,-12.2C-65.4,-29,-58.4,-45.2,-46.4,-57.6C-34.3,-70,-17.2,-78.7,1.8,-80.9C20.8,-83,41.7,-78.8,57.3,-67Z"
-              transform="translate(100 100)"
-            />
+          <div class="data-feed buttom ">
+            <div class="buttom-left">
+              <h3 class="data-feed-second-catog">party</h3>
+              <p class="data-feed-second-price" >2000 rs</p>
+            </div>
+            <div class="buttom-right">
+              <h3 class="data-feed-third-catog" >Suscription</h3>
+              <p class="data-feed-third-price" >2000 rs</p>
+            </div>
+          </div>
+          <svg class="svg2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#F3F8FF" d="M53,-63.8C68.2,-50.3,79.8,-33.2,84.2,-14.1C88.5,5.1,85.5,26.4,75.2,42.8C65,59.2,47.5,70.7,28.5,77.1C9.5,83.5,-10.9,84.8,-29.1,78.7C-47.3,72.6,-63.3,59.2,-74.2,42C-85.1,24.8,-91,3.9,-87.8,-15.7C-84.5,-35.2,-72.2,-53.3,-56.1,-66.6C-39.9,-79.9,-20,-88.4,-0.6,-87.7C18.9,-87.1,37.7,-77.3,53,-63.8Z" transform="translate(100 100)" />
           </svg>
-          <svg
-            class="svg3"
-            viewBox="0 0 200 200"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="#A7F0BA"
-              d="M52.5,-73C66.6,-62,75.6,-44.7,81.8,-26.4C88.1,-8,91.6,11.4,86.7,28.6C81.7,45.8,68.4,60.8,52.5,71.5C36.7,82.1,18.3,88.5,0.3,88.1C-17.8,87.7,-35.6,80.6,-51.4,70C-67.3,59.3,-81.2,45.1,-87.7,27.8C-94.3,10.5,-93.6,-9.8,-87.2,-28C-80.8,-46.2,-68.8,-62.2,-53.4,-72.7C-37.9,-83.2,-18.9,-88.1,0.1,-88.3C19.2,-88.5,38.4,-83.9,52.5,-73Z"
-              transform="translate(100 100)"
-            />
+          <svg class="svg3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#F3F8FF" d="M57.3,-57.4C72,-42.7,79.9,-21.4,80.1,0.2C80.4,21.8,72.9,43.7,58.3,59.4C43.7,75.1,21.8,84.8,-0.2,85C-22.2,85.2,-44.4,75.9,-59.7,60.2C-75.1,44.4,-83.4,22.2,-82.7,0.7C-82,-20.8,-72.2,-41.6,-56.9,-56.3C-41.6,-71,-20.8,-79.6,0.3,-79.9C21.4,-80.2,42.7,-72.1,57.3,-57.4Z" transform="translate(100 100)" />
           </svg>
         </figure>
-        <h4>View All Expenses</h4>
+        <a href="">View All Expenses</a>
       </section>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
