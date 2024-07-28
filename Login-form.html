@@ -1,48 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Login-from.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Login-from.css" />
 
     <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <title>Login Form</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="login-container">
-        <div class="logo">
-            <img src="" alt="Logo">
+      <div class="logo">
+        <img src="" alt="Logo" />
+      </div>
+      <h1><span>Login</span> your account</h1>
+      <h2>Please enter your details</h2>
+      <form>
+        <input type="email" id="userEmail" autocomplete="username" placeholder="Email" required />
+        <i class="ri-mail-line input-logo"></i>
+        <input
+          type="password"
+          id="userPassword"
+          placeholder="Password"
+          autocomplete="current-password"
+          required
+        />
+        <i class="ri-lock-2-line input-logo"></i>
+        <div class="remember-me">
+          <label> <input type="checkbox" /> Remember me </label>
         </div>
-        <h1><span>Login</span> your account</h1>
-        <h2>Please enter your details</h2>
-        <form>
-            <input type="email" placeholder="Email" required>
-            <i class="ri-mail-line input-logo"></i>
-            <input type="password" placeholder="Password" required>
-            <i class="ri-lock-2-line input-logo"></i>
-            <div class="remember-me">
-                <label>
-                    <input type="checkbox"> Remember me
-                </label>
-                
-            </div>
 
-            <button type="submit">Login</button>
-<br>
-            <a href="#">Forgot password?</a>
-        </form>
-        <div class="extra-links">
-            <a href="#">Sign up</a>
-            
-        </div>
-        <div class="social">
-            <i class="ri-facebook-box-fill" style="color: blue;"></i>
-            <i class="ri-instagram-fill" style="  color: rgb(218, 12, 12);"></i>
-            <i class="ri-twitter-x-fill" style="color: black;"></i>
-        </div>
+        <button type="submit" onclick="login()" id="login-btn">Login</button>
+        <br />
+        <a href="#">Forgot password?</a>
+      </form>
+      <div class="extra-links">
+        <a href="signup-form.html">Sign up</a>
+      </div>
+      <div class="social">
+        <i class="ri-facebook-box-fill" style="color: blue"></i>
+        <i class="ri-instagram-fill" style="color: rgb(218, 12, 12)"></i>
+        <i class="ri-twitter-x-fill" style="color: black"></i>
+      </div>
     </div>
-</body>
+    <script>
+      //   const account1 = {
+      //     owner: "Pramil Dhungana",
+      //     email: "pramil@gmail.com",
+      //     movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+      //     pin: 1111,
+      //   };
+
+      //   const account2 = {
+      //     owner: "Shishir Bhattarai",
+      //     email: "shishir@gmail.com",
+      //     movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+      //     pin: 2222,
+      //   };
+
+      //   const account3 = {
+      //     owner: "Kanchan Bhattarai",
+      //     email: "kanchan@gmail.com",
+      //     movements: [200, -200, 340, -300, -20, 50, 400, -460],
+      //     pin: 3333,
+      //   };
+
+      //   const account4 = {
+      //     owner: "Yogisha Niraula",
+      //     email: "yogisha@gmail.com",
+      //     movements: [430, 1000, 700, 50, 90],
+      //     pin: 4444,
+      //   };
+
+      //   const accounts = [account1, account2, account3, account4];
+
+      const userEmail = document.getElementById("userEmail").value.trim();
+      const userPassword = document.getElementById("userPassword").value.trim();
+      // login function
+
+      function login() {
+        let email = "pramildhungana7@gmail.com";
+        let pin = "123";
+
+        if (email === userEmail && pin ===  userPassword) {
+          alert("wrong email or password");
+        } else {
+          alert("success");
+          window.location.assign("index.html");
+        }
+      }
+    </script>
+  </body>
 </html>

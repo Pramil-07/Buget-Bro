@@ -56,22 +56,51 @@
         <div class="side-container">
           <img src="IMG_1270.JPG" alt="this is profile image" />
           <h1 class="profileName">Warren Buffet</h1>
-          <span><i class="ri-home-8-line"></i> &nbsp;Home</span>
-          <span><i class="ri-money-rupee-circle-line"></i> &nbsp;Expense</span>
-          <span><i class="ri-bank-line"></i> &nbsp;Saving</span>
-          <span><i class="ri-logout-circle-line"></i> &nbsp;LogOut</span>
+          <a href="index.html"> <span><i class="ri-home-8-line"></i> &nbsp;Home</span></a>
+          <a href="expenses.html"> <span><i class="ri-money-rupee-circle-line"></i> &nbsp;Expense</span></a>
+          <a href="saving.html"><span><i class="ri-bank-line"></i> &nbsp;Saving</span></a>
+          <a href="Login-form.html"><span><i class="ri-logout-circle-line"></i> &nbsp;LogOut</span></a>
         </div>
       </aside>
 
       <!-- side menu ends -->
+       
+        <!-- Calculator model starts -->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Expense Calculator</h2>
+
+            <form id="expenseForm">
+              <br>
+                <label for="category">Category:</label>
+                <input type="text" id="category" placeholder="Add Category &nbsp; &nbsp; (Ex: Food,Household )" name="category" required>
+
+                <label for="category">Items:</label>
+                <input type="text" id="items" placeholder="Add items&nbsp; &nbsp; (Ex: sunglass,pizz)" name="category" required>
+                <br>
+                <label for="cost">Cost:</label>
+                <input type="number" id="cost" name="cost" 
+                placeholder="Add price"
+                required>
+                <button type="submit">Add Expense</button>
+            </form>
+
+            <ul id="expenseList"></ul>
+            <br>
+            <p style="color: #756ab6;">Total: $<span id="total">0.00</span></p>
+        </div>
+    </div>
+        <!-- Calculator model ends -->
+
       <!-- main section and table section starts -->
       <main>
-        <input  type="text" placeholder="Add Expenses" />
+        <button id="openModal">Add Expense</button>
         <div class="input-icon">
-          <span class="material-symbols-outlined Category-type">
+          <!-- <span class="material-symbols-outlined Category-type">
             sell
-            </span>
-            <span class="material-symbols-outlined plus">
+            </span> -->
+            <span class="material-symbols-outlined " >
               add_circle
               </span>
         </div>
@@ -89,7 +118,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <!-- <tr>
                 <td>Food</td>
                 <td>Pzza</td>
                 <td>500</td>
@@ -98,57 +127,8 @@
                 <td>Suscription</td>
                 <td>Netflix</td>
                 <td>1000</td>
-              </tr>
-              <tr>
-                <td>Food</td>
-                <td>Pzza</td>
-                <td>500</td>
-              </tr>
-              <tr>
-                <td>Suscription</td>
-                <td>Netflix</td>
-                <td>1000</td>
-              </tr>
-              <tr>
-                <td>Food</td>
-                <td>Pzza</td>
-                <td>500</td>
-              </tr>
-              <tr>
-                <td>Suscription</td>
-                <td>Netflix</td>
-                <td>1000</td>
-              </tr>
-              <tr>
-                <td>Food</td>
-                <td>Pzza</td>
-                <td>500</td>
-              </tr>
-              <tr>
-                <td>Suscription</td>
-                <td>Netflix</td>
-                <td>1000</td>
-              </tr>
-              <tr>
-                <td>Food</td>
-                <td>Pzza</td>
-                <td>500</td>
-              </tr>
-              <tr>
-                <td>Suscription</td>
-                <td>Netflix</td>
-                <td>1000</td>
-              </tr>
-              <tr>
-                <td>Food</td>
-                <td>Pzza</td>
-                <td>500</td>
-              </tr>
-              <tr>
-                <td>Suscription</td>
-                <td>Netflix</td>
-                <td>1000</td>
-              </tr>
+                
+              </tr> -->
             </tbody>
           </table>
         </section>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+
+        .heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: none;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .card .description {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #555555;
+            margin-bottom: 10px;
+        }
+
+        .card .amount-saved {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .progress-container {
+            background-color: #e0e0e0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #76c7c0;
+            width: 0%;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+        }
+
+        .controls input,
+        .controls button {
+            margin-right: 10px;
+            padding: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            border-radius: 5px;
+            background-color: #e0e0e0;
+            border-color: #f0f2f5;
+            border-style: groove;
+        }
+
+        input {
+            border-radius: 5px;
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">Savings</div>
+    <div class="controls">
+        <input type="text" id="newCategory" placeholder="New Category">
+        <input type="number" id="newSavedAmount" placeholder="Amount Saved">
+        <input type="number" id="newNeededAmount" placeholder="Amount Needed">
+        <button onclick="addCard()">Add Savings</button>
+    </div>
+    <div class="card-container" id="cardContainer">
+        <!-- Savings cards will be dynamically inserted here -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to calculate and set the progress bar width
+            function updateProgress(card) {
+                const saved = parseFloat(card.getAttribute('data-saved'));
+                const needed = parseFloat(card.getAttribute('data-needed'));
+                const progress = (saved / needed) * 100;
+                card.querySelector('.progress-bar').style.width = progress + '%';
+            }
+
+            // Function to create a new card element
+            function createCard(category, saved, needed) {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.setAttribute('data-saved', saved);
+                card.setAttribute('data-needed', needed);
+
+                card.innerHTML = `
+                    <h3>${category}</h3>
+                    <div class="description">
+                        <span class="amount-saved">Amount saved: $<span class="saved-display">${saved}</span><input type="number" class="saved-input hidden" value="${saved}" onchange="updateAmount(this)"></span>
+                        <span>Amount needed: $<span class="needed-display">${needed}</span><input type="number" class="needed-input hidden" value="${needed}" onchange="updateAmount(this)"></span>
+                        <button onclick="toggleEdit(this)">Edit</button>
+                        <button onclick="removeCard(this)">Remove</button>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                `;
+
+                updateProgress(card);
+                document.getElementById('cardContainer').appendChild(card);
+            }
+
+            // Function to add a new card
+            window.addCard = function () {
+                const category = document.getElementById('newCategory').value;
+                const saved = document.getElementById('newSavedAmount').value;
+                const needed = document.getElementById('newNeededAmount').value;
+
+                if (category && saved && needed) {
+                    createCard(category, parseFloat(saved), parseFloat(needed));
+                } else {
+                    alert('Please fill in all fields');
+                }
+            };
+
+            // Function to toggle edit mode
+            window.toggleEdit = function (button) {
+                const card = button.closest('.card');
+                const savedDisplay = card.querySelector('.saved-display');
+                const savedInput = card.querySelector('.saved-input');
+                const neededDisplay = card.querySelector('.needed-display');
+                const neededInput = card.querySelector('.needed-input');
+
+                if (button.innerText === 'Edit') {
+                    button.innerText = 'Save';
+                    savedDisplay.classList.add('hidden');
+                    neededDisplay.classList.add('hidden');
+                    savedInput.classList.remove('hidden');
+                    neededInput.classList.remove('hidden');
+                } else {
+                    button.innerText = 'Edit';
+                    savedDisplay.classList.remove('hidden');
+                    neededDisplay.classList.remove('hidden');
+                    savedInput.classList.add('hidden');
+                    neededInput.classList.add('hidden');
+
+                    updateAmount(savedInput);
+                    updateAmount(neededInput);
+                }
+            };
+
+            // Function to update the amount saved or needed
+            window.updateAmount = function (input) {
+                const card = input.closest('.card');
+                const saved = card.querySelector('.saved-input').value;
+                const needed = card.querySelector('.needed-input').value;
+                const savedDisplay = card.querySelector('.saved-display');
+                const neededDisplay = card.querySelector('.needed-display');
+
+                card.setAttribute('data-saved', saved);
+                card.setAttribute('data-needed', needed);
+
+                savedDisplay.innerText = saved;
+                neededDisplay.innerText = needed;
+
+                updateProgress(card);
+            };
+
+            // Function to remove a card
+            window.removeCard = function (button) {
+                const card = button.closest('.card');
+                card.remove();
+            };
+
+            // Example cards
+            createCard('Shopping', 500, 2000);
+            createCard('Education Fee', 500, 5000);
+            createCard('Travel', 1500, 3000);
+            createCard('Other Savings', 400, 1000);
+        });
+    </script>
+</body>
+
+</html>
